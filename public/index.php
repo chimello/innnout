@@ -1,6 +1,9 @@
 <?php
 
-    require_once(dirname(__FILE__, 2) . '/src/config/database.php');
+    require_once(dirname(__FILE__, 2) . '/src/config/config.php');
+    require_once(dirname(__FILE__, 2) . '/src/models/Users.php');
+
+    $user = new User(['name' => 'João', 'email' => 'joao@email.com']);
 
     $sql = "SELECT * FROM users";
     $result = DataBase::getResultFromQuery($sql);
