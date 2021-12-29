@@ -11,9 +11,19 @@
         }
 
         public function loadFromArray ($arr) {
-            foreach($arr as $key => $value) {
-                
+            if($arr) {
+                foreach ($arr as $key => $value) {
+                    $this->set($key, $value);
+                }
             }
+        }
+
+        public function get($key) {
+            return $this->values[$key];
+        }
+
+        public function set($key, $value) {
+            $this->values[$key] = $value;
         }
     }
 
