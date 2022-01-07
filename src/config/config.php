@@ -4,8 +4,11 @@ setlocale(LC_TIME, 'pt-BR', 'pt-BR.uft8', 'portuguese');
 
 //pastas do projeto
 define('MODEL_PATH', realpath(dirname(__FILE__). '/../models'));
+define('VIEW_PATH', realpath(dirname(__FILE__). '/../views'));
 
+//arquivos do projeto
 require_once(realpath(dirname(__FILE__) . '/database.php'));
+require_once(realpath(MODEL_PATH . '/Model.php'));
 
 
 ?>
