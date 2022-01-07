@@ -5,6 +5,11 @@
 
     $user = new User(['name' => 'João', 'email' => 'joao@email.com']);
     print_r($user);
+    $user->email = 'joao_alterado@email.com';
+    echo '<br><br>';
+    print_r($user->email);
+    // $user->set('email', "joao_alterado@email.com");
+    // print_r($user->__get('email'));
 
     // $sql = "SELECT * FROM users";
     // $result = DataBase::getResultFromQuery($sql);
