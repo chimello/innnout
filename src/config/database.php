@@ -10,7 +10,7 @@
                             $env['database']);
 
             if($conn->connect_error) {
-                die("Erros: " . $conn->connect_error);
+                die("Erro: " . $conn->connect_error);
             }
 
             return $conn;
