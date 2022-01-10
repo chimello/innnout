@@ -70,7 +70,7 @@
         }
 
         public function update() {
-            $sql = "UPDATE " . static::$tableName . "SET ";
+            $sql = "UPDATE " . static::$tableName . " SET ";
             foreach(static::$columns as $col) {
                 $sql .= " ${col} = " .
                     static::getFormatedValue($this->$col) .
@@ -78,7 +78,7 @@
             }
 
             $sql[strlen($sql) -1] = ' ';
-            $sql .= "WHERE id = {$this->id}";
+            $sql .= " WHERE id = {$this->id}";
             DataBase::executeSQL($sql);
         }
 
