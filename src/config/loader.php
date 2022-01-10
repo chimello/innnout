@@ -34,4 +34,8 @@
         require_once(TEMPLATE_PATH . "/footer.php");
     }
 
+    function renderTittle($title, $subtitle, $icon = null) {
+        require_once(TEMPLATE_PATH . "/tittle.php");
+    }
+
 ?>
