@@ -1,5 +1,5 @@
 <?php
-
-loadTemplateView('day_records');
-
+    session_start();
+    requireValidSession();
+    loadTemplateView('day_records');
 ?>
