@@ -26,16 +26,22 @@
                     <div class="for-group">
                         <label for="email">E-mail</label>
                         <input type="email" name="email" id="email"
-                                class="form-control"
+                                class="form-control <?= $errors['email'] ? 'is-invalid' : '' ?>"
                                 value="<?= $email ?>"
                                 placeholder="Informe o seu E-mail"
                                 autofocus>
+                            <div class="invalid-feedback">
+                                <?= $errors['email'] ?>
+                            </div>
                     </div>
                     <div class="for-group">
                         <label for="password">Senha</label>
                         <input type="password" name="password" id="password"
-                                class="form-control"
+                                class="form-control <?= $errors['password'] ? 'is-invalid' : '' ?>"
                                 placeholder="Informe e sua senha">
+                            <div class="invalid-feedback">
+                                <?= $errors['password'] ?>
+                            </div>
                     </div>
                 </div>
                 <div class="card-footer">
