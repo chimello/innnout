@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,14 +11,15 @@
     <link rel="stylesheet" href="assets/css/template.css">
     <title>InNOut</title>
 </head>
+
 <body>
     <header class="header">
         <div class="logo">
             <i class="icofont-travelling mr-2"></i>
-                    <span class="font-weight-light">In </span>
-                    <span class="font-weight-bold mx-2">N' </span>
-                    <span class="font-weight-light">Out</span>
-                    <i class="icofont-runner-alt-1 ml-2"></i>
+            <span class="font-weight-light">In </span>
+            <span class="font-weight-bold mx-2">N' </span>
+            <span class="font-weight-light">Out</span>
+            <i class="icofont-runner-alt-1 ml-2"></i>
         </div>
         <div class="menu-toggle mx-3">
             <i class="icofont-navigation-menu">
@@ -28,19 +30,19 @@
         </div>
         <div class="dropdown">
             <div class="dropdown-button">
-                <span>Usuário Mock</span>
-                <i class="icofont-simple-down ml-2"></i>
+                <span class="ml-2">Usuário Mock</span>
+                <i class="icofont-simple-down mx-2"></i>
             </div>
             <div class="dropdown-content">
                 <ul class="nav-list">
                     <li class="nav-item">
                         <a href="logout.php">
-                            <i class="icofont-logout mr-2">
-                                Sair
-                            </i>
+                            <i class="icofont-logout mr-2"></i>
+                            Sair
                         </a>
                     </li>
                 </ul>
             </div>
+
         </div>
     </header>
