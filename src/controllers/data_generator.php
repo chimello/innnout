@@ -1,5 +1,11 @@
 <?php
 
+    loadModel('WorkingHours');
+
+    DataBase::executeSQL('DELETE FROM working_hours'); //zera horas trabalhadas
+    DataBase::executeSQL('ALTER TABLE working_hours AUTO_INCREMENT = 1'); //reinicia sequencia hr trabalhadas
+    DataBase::executeSQL('DELETE FROM users WHERE ID > 5'); //zera usuários.
+
     function getDayTemplateByOdds($regularRate, $extraRate, $lazyRate) {
         $regularDayTemplate = [
             'time1' => '08:00:00',
@@ -34,5 +40,27 @@
             return $lazyDayTemplate;
         }
     }
+
+    function populateWorkingHours($userId, $initialDate, $regularRate, $extraRate, $lazyRate) {
+        $currentDate = $initialDate;
+        $today = new DateTime();
+        $columns = ['user_id' => $userId, 'work_date' => $currentDate];
+
+        while (isBefore($currentDate, $today)) {
+            if (!isWeekend($currentDate)) {
+                $template = getDayTemplateByOdds($regularRate, $extraRate, $lazyRate);
+                $columns = array_merge($columns, $template);
+                $workingHours = new WorkingHours($columns);
+                $workingHours->save();
+            }
+            $currentDate = getNextDay($currentDate)->format('Y-m-d');
+            $columns['work_date'] = $currentDate;
+        }
+    }
+
+    populateWorkingHours(1, '2021-12-01', 70, 20, 10);
+    populateWorkingHours(3, '2021-12-01', 20, 75, 5);
+    populateWorkingHours(4, '2021-12-01', 20, 20, 60);
     
+    echo "Tudo Certo :)";
 ?>
