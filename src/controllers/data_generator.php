@@ -1,7 +1,5 @@
 <?php
 
-    loadModel('WorkingHours');
-
     DataBase::executeSQL('DELETE FROM working_hours'); //zera horas trabalhadas
     DataBase::executeSQL('ALTER TABLE working_hours AUTO_INCREMENT = 1'); //reinicia sequencia hr trabalhadas
     DataBase::executeSQL('DELETE FROM users WHERE ID > 5'); //zera usuários.
