@@ -43,6 +43,17 @@
             return null;
         }
 
+        public function getActiveClock() {
+            $nextTime = $this->getNextTime();
+            if ($nextTime === 'time1' || $nextTime === 'time3') {
+                return 'exitTime';
+            } elseif ($nextTime === 'time2' || $nextTime === 'time4') {
+                return 'workedInterval';
+            } else {
+                return null;
+            }
+        }
+
         public function innout($time) {
             $timeColumn = $this->getNextTime();
             if(!$timeColumn) {
