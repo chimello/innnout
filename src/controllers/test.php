@@ -1,5 +1,5 @@
 <?php
 //CONTROLER TEMPORÁRIO!;
 
-    print_r(getLastDayOfMonth('2022-02'));
+    print_r(getFirstDayOfMonth('2022-02'));
 ?>
