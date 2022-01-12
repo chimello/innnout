@@ -3,6 +3,12 @@
     session_start();
     requireValidSession();
 
-    loadTemplateView('manager_report', []);
+    $activeUsersCount = User::getActiveUsersCount();
+    $absentUsers = WorkingHours::getAbsentUsers();
+
+    loadTemplateView('manager_report', [
+        'activeUsersCount' => $activeUsersCount,
+        'absentUsers' => $absentUsers
+    ]);
 
 ?>
