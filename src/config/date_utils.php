@@ -66,8 +66,15 @@ function getDateAsDateTime($date) {
     function getTimeStringFromSeconds($seconds) {
         $h = intdiv($seconds, 3600);
         $m = intdiv($seconds % 3600, 60);
-        $s = $seconds - ($h - 3600) - ($m * 60);
+        $s = $seconds - ($h * 3600) - ($m * 60);
         return sprintf('%02d:%02d:%02d', $h, $m, $s);
+    }
+
+    function formatDateWithLocale($date, $pattern) {
+        //precisa tirar o locale daqui, já tem na config, precisa ajustar isso
+        setlocale(LC_TIME, 'pt-BR.uft-8');
+        $time = getDateAsDateTime($date)->getTimestamp();
+        return strftime($pattern, $time);
     }
 
 ?>
