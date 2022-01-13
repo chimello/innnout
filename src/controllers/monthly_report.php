@@ -20,6 +20,7 @@
         $year = date('Y') - $yearDiff;
         for ($month = 12; $month >= 1; $month--) {
             $date = new DateTime("{$year}-{$month}-1");
+            setlocale(LC_TIME, 'pt-BR.uft-8');
             $periods[$date->format('Y-m')] = strftime('%B de %Y', $date->getTimestamp());
         }
     }
