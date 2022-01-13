@@ -6,9 +6,9 @@
     $activeUsersCount = User::getActiveUsersCount();
     $absentUsers = WorkingHours::getAbsentUsers();
 
-    $yearAndMonth = (new DateTime())->format('Y-m-d');
+    $yearAndMonth = (new DateTime())->format('Y-m');
     $seconds = WorkingHours::getWorkedTimeInMonth($yearAndMonth);
-    $hoursInMonth = explode(':', getTimeStringFromSeconds($seconds));
+    $hoursInMonth = explode(':', getTimeStringFromSeconds($seconds))[0];
 
     loadTemplateView('manager_report', [
         'activeUsersCount' => $activeUsersCount,
