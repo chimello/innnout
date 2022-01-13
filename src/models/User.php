@@ -13,6 +13,13 @@
         public static function getActiveUsersCount() {
             return static::getCount(['raw' => 'end_date IS NULL']);
         }
+
+        public function insert() {
+            if (!$this->end_date) {
+                $this->end_date = null;
+            }
+            return parent::insert();
+        }
     }
 
 ?>
