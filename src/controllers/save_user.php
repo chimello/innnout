@@ -30,7 +30,7 @@
         }
     }
 
-    loadTemplateView('save_user', [
+    loadTemplateView('save_user', $userData + [
         'exception' => $exception
     ]);
 
