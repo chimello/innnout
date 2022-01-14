@@ -30,6 +30,12 @@
         }
     }
 
+    if ($userData == null) {
+        loadTemplateView('save_user', [
+            'exception' => $exception
+        ]);
+    }
+
     loadTemplateView('save_user', $userData + [
         'exception' => $exception
     ]);
