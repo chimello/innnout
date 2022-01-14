@@ -9,7 +9,7 @@
         include(TEMPLATE_PATH . "/messages.php");
     ?>
 
-    <a class="btn btn-lg btn-primary"
+    <a class="btn btn-lg btn-primary mb-2"
         href="save_user.php">Novo Usuário</a>
 
     <table class="table table-bordered table-striped table-hover">
