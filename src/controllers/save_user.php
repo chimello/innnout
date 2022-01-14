@@ -7,8 +7,8 @@
 
     if (count($_POST) > 0) {
         try {
-            $dbUser = new User($_POST);
-            $dbUser->insert();
+            $newUser = new User($_POST);
+            $newUser->insert();
             addSuccessMsg('Usuário Cadastrado com Sucesso!');
             $_POST = [];
         } catch (Exception $e) {
