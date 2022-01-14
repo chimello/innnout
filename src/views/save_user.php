@@ -16,7 +16,7 @@
                 <label for="name">Nome</label>
                 <input type="text" id="name" name="name" placeholder="Informe o nome"
                         class="form-control <?= $errors['name'] ? 'is-invalid' : '' ?>"
-                        value="<?= $name ?>">
+                        value="<?= $_POST['name'] ?>">
                 <div class="invalid-feedback">
                     <?= $errors['name'] ?>
                 </div>
@@ -25,7 +25,7 @@
                 <label for="email">E-mail</label>
                 <input type="text" id="email" name="email" placeholder="Informe o E-mail"
                         class="form-control <?= $errors['email'] ? 'is-invalid' : '' ?>"
-                        value="<?= $email ?>">
+                        value="<?= $_POST['email'] ?>">
                 <div class="invalid-feedback">
                     <?= $errors['email'] ?>
                 </div>
@@ -55,7 +55,7 @@
                 <label for="start_date">Data de Admissão</label>
                 <input type="date" id="start_date" name="start_date"
                         class="form-control <?= $errors['start_date'] ? 'is-invalid' : '' ?>"
-                        value="<?= $start_date ?>">
+                        value="<?= $_POST['start_date'] ?>">
                 <div class="invalid-feedback">
                     <?= $errors['start_date'] ?>
                 </div>
@@ -64,7 +64,7 @@
                 <label for="end_date">Data de Desligamento</label>
                 <input type="date" id="end_date" name="end_date"
                         class="form-control <?= $errors['end_date'] ? 'is-invalid' : '' ?>"
-                        value="<?= $end_date ?>">
+                        value="<?= $_POST['end_date'] ?>">
                 <div class="invalid-feedback">
                     <?= $errors['end_date'] ?>
                 </div>
