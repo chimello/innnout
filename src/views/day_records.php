@@ -1,6 +1,8 @@
 <main class="content">
     <?php
 
+        setlocale(LC_TIME, 'pt-BR.uft-8');
+
         renderTittle(
             'Registrar Ponto',
             'Mantenha seu ponto consistente!',
@@ -11,17 +13,25 @@
     ?>
     <div class="card">
         <div class="card-header">
-            <h3><?= $today ?></h3>
-            <p class="mb-0">Os batimento efetuados hoje</p>
+            <form action="#" method="post" class="mt-2 mb-3">
+                <div class="form-inline no-border">
+                    <input type="date" name="pointdate" id="pointdate" class="datepicker form-control col-2"
+                            value="<?= $_POST['pointdate'] ? $_POST['pointdate'] : $today ?>">
+                    <button type="submit" class="btn btn-secondary btn-lg ml-2">Buscar Data</button>
+                </div>
+            </form>
+            
+            <h3><?= $_POST['pointdate'] ? (strftime('%A, %d de %B de %Y', strtotime($_POST['pointdate']))) : $today ?></h3>
+            <p class="mb-0">Batimento efetuados no dia selecionado</p>
         </div>
         <div class="card-body">
             <div class="d-flex m-5 justify-content-around">
-                <span class="record">Entrada 1: <?= $workingHours->time1 ?? '---' ?></span>
-                <span class="record">Saída 1: <?= $workingHours->time2 ?? '---' ?></span>
+                <span class="record">Entrada 1: <?= $timesSelectedDay->time1 ?? '---' ?></span>
+                <span class="record">Saída 1: <?= $timesSelectedDay->time2 ?? '---' ?></span>
             </div>
             <div class="d-flex m-5 justify-content-around">
-                <span class="record">Entrada 2: <?= $workingHours->time3 ?? '---' ?></span>
-                <span class="record">Saída 2: <?= $workingHours->time4 ?? '---' ?></span>
+                <span class="record">Entrada 2: <?= $timesSelectedDay->time3 ?? '---' ?></span>
+                <span class="record">Saída 2: <?= $timesSelectedDay->time4 ?? '---' ?></span>
             </div>
         </div>
         <div class="card-footer d-flex justify-content-center">
@@ -43,5 +53,4 @@
             </button>
         </div>
     </form>
-
 </main>

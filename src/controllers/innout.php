@@ -13,6 +13,7 @@
             $currentTime = $_POST['forcedTime'];
         }
 
+
         $records->innout($currentTime); //bate o ponto
         addSuccessMsg('Ponto Inserido com Sucesso!');
     } catch (AppException $e) {
