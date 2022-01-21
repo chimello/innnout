@@ -41,7 +41,8 @@
             </a>
         </div>
     </div>
-
+    
+    <?php if($user->is_admin): ?>
     <form class="mt-5" action="innout.php" method="post">
         <div class="input-group no-border">
             <input class="form-control" type="text"
@@ -53,4 +54,5 @@
             </button>
         </div>
     </form>
+    <?php endif ?>
 </main>
