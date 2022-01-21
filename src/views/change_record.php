@@ -25,7 +25,7 @@
             <p class="mb-0">Batimento efetuados no dia selecionado</p>
         </div>
         <div class="card-body">
-            <form action="#.php" method="post">
+            <form action="change_registry.php" method="post">
                 <div class="d-flex m-5 justify-content-around">
                     <div class="form">
                         <label class="record" for="altertime1">Entrada 1:</label>
@@ -50,13 +50,13 @@
                                 value="<?= $timesSelectedDay->time4 ?? '---' ?>">
                     </div>
                 </div>
+                <input type="hidden" name="pointdate" id="pointdate" value="<?= $_POST['pointdate'] ? $_POST['pointdate'] : $today ?>">
+
+                <button type="submit" class="btn btn-secondary btn-lg ml-2">
+                    Alterar Ponto
+                </button>
             </form>
         </div>
-        <div class="card-footer d-flex justify-content-center">
-            <a href="change_registry.php" class="btn btn-secondary btn-lg ml-2">
-                <i class="icofont-exchange mr-1"></i>
-                Alterar Ponto
-            </a>
-        </div>
+        
     </div>
 </main>
