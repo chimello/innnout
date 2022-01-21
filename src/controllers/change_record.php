@@ -1,6 +1,6 @@
 <?php
     session_start();
-    requireValidSession();
+    requireValidSession(true);
     
     $user = $_SESSION['user'];
     $date = (new Datetime())->getTimestamp();

@@ -13,12 +13,14 @@
                     Relatório Mensal
                 </a>
             </li>
+            <?php if($user->is_admin): ?>
             <li class="nav-item">
                 <a href="change_record.php">
                     <i class="icofont-clock-time mr-2"></i>
                     Alterar Ponto
                 </a>
             </li>
+            <?php endif ?>
             <?php if($user->is_admin): ?>
             <li class="nav-item">
                 <a href="manager_report.php">
