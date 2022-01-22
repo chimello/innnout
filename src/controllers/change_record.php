@@ -11,7 +11,7 @@
         $users = User::get();
         $selectedUserId = $_POST['user'] ? $_POST['user'] : $user->id;
     }
-    $selectedUser = $_POST['user'];
+    $selectedUser = $selectedUserId;
 
     $date = (new Datetime())->getTimestamp();
     $today = strftime('%A, %d de %B de %Y', $date);
@@ -31,5 +31,6 @@
         'pointDate' => $pointDate,
         'users' => $users,
         'selectedUserId' => $selectedUserId,
+        'selectedUser' => $selectedUser,
     ]);
 ?>
