@@ -21,6 +21,7 @@
             } else {
                 $dbUser->insert();
                 addSuccessMsg('Usuário Cadastrado com Sucesso!');
+                header('Location: users.php');
             }
             $_POST = [];
         } catch (Exception $e) {

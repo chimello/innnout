@@ -1,5 +1,6 @@
 <?php
 
+    ini_set('default_charset','UTF-8');
     class Model {
         protected static $tableName = '';
         protected static $columns = [];
@@ -77,6 +78,8 @@
                 $sql .= static::getFormatedValue($this->$col) . ",";
             }
             $sql[strlen($sql) -1] = ')';
+            $sql = str_replace("VALUES ('',", ' VALUES (', $sql);
+            $sql = str_replace('(id,', '(', $sql);
             $id = DataBase::executeSQL($sql);
             $this->id = $id;
         }

@@ -16,7 +16,7 @@
             <form action="#" method="post" class="mt-2 mb-3">
                 <div class="form-inline no-border">
                     <input type="date" name="pointdate" id="pointdate" class="datepicker form-control col-2"
-                            value="<?= $_POST['pointdate'] ? $_POST['pointdate'] : $today ?>">
+                            value="<?= $_POST['pointdate'] ?? $pointDate ?>">
                     <button type="submit" class="btn btn-secondary btn-lg ml-2">Buscar Data</button>
                 </div>
             </form>

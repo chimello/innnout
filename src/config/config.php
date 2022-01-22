@@ -1,6 +1,7 @@
 <?php
     date_default_timezone_set('America/Sao_Paulo');
     setlocale(LC_TIME, 'pt_BR', 'pt_BR.uft-8', 'portuguese');
+    ini_set('default_charset','UTF-8');
 
     //constantes Gerais
     define('DAILY_TIME', 60 * 60 * 8);

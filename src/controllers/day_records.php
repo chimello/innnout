@@ -1,6 +1,8 @@
 <?php
     session_start();
     requireValidSession();
+
+    setlocale(LC_TIME, 'pt-BR.uft-8');
     
     $user = $_SESSION['user'];
     $date = (new Datetime())->getTimestamp();
@@ -13,6 +15,6 @@
     loadTemplateView('day_records' ,
         ['today'=> $today,
         'timesSelectedDay' => $timesSelectedDay,
-        'pointdate' => $pointDate,
+        'pointDate' => $pointDate,
     ]);
 ?>
