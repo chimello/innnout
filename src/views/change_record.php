@@ -15,6 +15,18 @@
         <div class="card-header">
             <form action="#" method="post" class="mt-2 mb-3">
                 <div class="form-inline no-border">
+                <?php if ($user->is_admin): ?>
+                    <select name="user" class="form-control mr-2" placeholder="Selecione o usuário...">
+                        <option value="">Selecione o Usuário</option>
+                            <?php
+        
+                                foreach($users as $user) {
+                                    $selected = $user->id == $selectedUserId ? 'selected' : '';
+                                    echo "<option value='{$user->id}' {$selected}>{$user->name}</option>";
+                                }
+                            ?>
+                    </select>
+                <?php endif ?>
                     <input type="date" name="pointdate" id="pointdate" class="datepicker form-control col-2"
                             value="<?= $_POST['pointdate'] ?? $pointDate ?>">
                     <button type="submit" class="btn btn-secondary btn-lg ml-2">Buscar Data</button>
@@ -51,6 +63,7 @@
                     </div>
                 </div>
                 <input type="hidden" name="pointdate" id="pointdate" value="<?= $_POST['pointdate'] ? $_POST['pointdate'] : $today ?>">
+                <input type="hidden" name="user" id="user" value="<?= $_POST['user'] ?>">
 
                 <button type="submit" class="btn btn-secondary btn-lg ml-2">
                     Alterar Ponto

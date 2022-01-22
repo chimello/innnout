@@ -17,11 +17,12 @@
     $records->time2 = $_POST['altertime2'];
     $records->time3 = $_POST['altertime3'];
     $records->time4 = $_POST['altertime4'];
+    $records->user_id = $_POST['user'];
+
 
     try {
         
         $records->update();
-        // $records->innout($timesSelectedDay); //bate o ponto
         addSuccessMsg('Ponto Alterado com Sucesso!');
     } catch (AppException $e) {
         addErrorMsg($e->getMessage());
