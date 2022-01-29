@@ -79,7 +79,10 @@
             }
             $sql[strlen($sql) -1] = ')';
             $sql = str_replace("VALUES ('',", ' VALUES (', $sql);
-            $sql = str_replace('(id,', '(', $sql);
+            if($_POST['altertime1'])
+            {
+                $sql = str_replace('(id,', '(', $sql);
+            }
             $id = DataBase::executeSQL($sql);
             $this->id = $id;
         }

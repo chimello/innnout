@@ -14,7 +14,7 @@
                 </a>
             </li>
             <?php if($user->is_admin): ?>
-            <li class="nav-item">
+            <li class="nav-item" hidden>
                 <a href="change_record.php">
                     <i class="icofont-clock-time mr-2"></i>
                     Alterar Ponto
