@@ -24,6 +24,7 @@
 
     $timesSelectedDay = WorkingHours::getOne(['user_id' => $selectedUser ?? $user->id,
                                                 'work_date' => $pointDate]);
+    $idRegistry = $timesSelectedDay->id;
 
     loadTemplateView('change_record' ,
         ['today'=> $today,
@@ -32,5 +33,6 @@
         'users' => $users,
         'selectedUserId' => $selectedUserId,
         'selectedUser' => $selectedUser,
+        'idRegistry' => $idRegistry,
     ]);
 ?>

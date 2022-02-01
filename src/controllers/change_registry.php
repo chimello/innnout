@@ -10,6 +10,7 @@
     $pointDate = $_POST['pointdate'];
     
     $records = WorkingHours::loadFromUserAndDate($user->id, $pointDate);
+    $teste = $timesSelectedDay->id;
     $timesSelectedDay = WorkingHours::getOne(['user_id' => $user->id,
     'work_date' => $pointDate]);
     
@@ -17,8 +18,8 @@
     $records->time2 = $_POST['altertime2'];
     $records->time3 = $_POST['altertime3'];
     $records->time4 = $_POST['altertime4'];
-    $records->user_id = $selectedUser;
-
+    $records->user_id = $_POST['user'];
+    $records->id = $_POST['idregistry'];
 
     try {
         
